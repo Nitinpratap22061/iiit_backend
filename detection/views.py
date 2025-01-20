@@ -18,7 +18,7 @@ MODEL_PATH = os.path.join(BASE_DIR, 'ml_models', 'best.onnx')
 DATA_PATH = os.path.join(BASE_DIR, 'ml_models', 'data.yaml')
 
 # Initialize YOLO model
-yolo = YOLO_Pred(MODEL_PATH, DATA_PATH)
+yolo = YOLO_Pred(MODEL_PATH,DATA_PATH)
 
 class DetectionConsumer(AsyncWebsocketConsumer):
     async def connect(self):
