@@ -5,6 +5,8 @@ channels==4.0.0
 
 # OpenCV (Ensure compatibility with ONNX)
 opencv-python-headless==4.5.5.64
+pyttsx3==2.90
+
 
 # Machine Learning & ONNX Support
 torch==2.0.1
