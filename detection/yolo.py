@@ -45,6 +45,9 @@ class YOLO_Pred():
         self.yolo.setInput(blob)
         preds = self.yolo.forward()
 
+        # Debug: Check the shape of the predictions
+        print(f"Prediction output shape: {preds.shape}")
+
         # Non-Maximum Suppression
         detections = preds[0]
         boxes = []
@@ -143,4 +146,3 @@ class YOLO_Pred():
             # Add more colors if necessary
         ]
         return color_palette[ID % len(color_palette)]
-
