@@ -9,8 +9,10 @@ opencv-python-headless==4.5.5.64
 # Machine Learning & ONNX Support
 torch==2.0.1
 torchvision==0.15.2
-onnx==1.12.0
-onnxruntime==1.20.1  # Updated to latest available version
+# Use a pre-built ONNX version that doesn't require compilation
+onnx==1.14.0  # Compatible with ONNX Runtime
+onnxruntime==1.20.1  # Latest available version
+wheel
 numpy==1.24.3  # Compatible with OpenCV and Torch
 
 # WebSockets & Async Features
