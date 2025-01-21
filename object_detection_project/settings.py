@@ -86,11 +86,21 @@ DATABASES = {
 }
 # settings.py
 
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels.layers.InMemoryChannelLayer",
+#     },
+# }
+
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer",
+        "BACKEND": "channels_redis.core.RedisChannelLayer",  # Use Redis in production
+        "CONFIG": {
+            "hosts": [('127.0.0.1', 6379)],  # Make sure to configure Redis for production use
+        },
     },
 }
+
 
 
 
