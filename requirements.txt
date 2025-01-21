@@ -12,5 +12,8 @@ PyYAML==6.0
 opencv-python==4.7.0.72
 setuptools
 wheel
+virtualenv
+PYTHON_VERSION = 3.10
+
 
 
