@@ -2,10 +2,8 @@
 # coding: utf-8
 import cv2
 import numpy as np
-import os
 import yaml
 from yaml.loader import SafeLoader
-
 
 class YOLO_Pred():
     def __init__(self, onnx_model, data_yaml):
@@ -30,7 +28,12 @@ class YOLO_Pred():
             return
         
     def predictions(self, image):
-        row, col, d = image.shape
+        try:
+            row, col, d = image.shape
+        except AttributeError:
+            print("Invalid image format")
+            return image, []
+
         # Convert image into square
         max_rc = max(row, col)
         input_image = np.zeros((max_rc, max_rc, 3), dtype=np.uint8)
@@ -132,6 +135,12 @@ class YOLO_Pred():
             (0, 255, 0),  # Green
             (255, 0, 0),  # Blue
             (0, 0, 255),  # Red
+            (0, 255, 255),  # Yellow
+            (255, 255, 0),  # Cyan
+            (255, 165, 0),  # Orange
+            (128, 0, 128),  # Purple
+            (0, 255, 127)   # SpringGreen
             # Add more colors if necessary
         ]
         return color_palette[ID % len(color_palette)]
+
