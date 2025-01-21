@@ -13,7 +13,7 @@ opencv-python==4.7.0.72
 setuptools
 wheel
 virtualenv
-PYTHON_VERSION = 3.10
+PYTHON_VERSION == 3.10
 
 
 
