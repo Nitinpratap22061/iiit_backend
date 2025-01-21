@@ -7,7 +7,7 @@ channels==4.0.0
 opencv-python-headless==4.5.5.64
 pyttsx3==2.90
 pyyaml
-
+channels_redis
 
 
 # Machine Learning & ONNX Support
