@@ -3,33 +3,28 @@ Django==4.2.5
 daphne==4.0.0
 channels==4.0.0
 
+# WebSockets & Async Features
+asgiref==3.7.2
+
 # OpenCV (Ensure compatibility with ONNX)
 opencv-python-headless==4.5.5.64
-pyttsx3==2.90
-pyyaml
-channels_redis
-
 
 # Machine Learning & ONNX Support
 torch==2.0.1
 torchvision==0.15.2
-# Use a pre-built ONNX version that doesn't require compilation
-onnx==1.14.0  # Compatible with ONNX Runtime
-onnxruntime==1.20.1  # Latest available version
-wheel
-numpy==1.24.3  # Compatible with OpenCV and Torch
+onnx==1.14.0
+onnxruntime==1.20.1
+numpy==1.24.3
 
-# WebSockets & Async Features
-asgiref==3.7.2
-
-# Other Dependencies
+# Other dependencies
+pyttsx3==2.90
+pyyaml==6.0  # Latest stable version
+channels_redis==4.0.0  # Add Redis if needed for production scaling
 pillow==9.5.0
 requests==2.31.0
 whitenoise==6.5.0  # For serving static files
 gunicorn==20.1.0  # Needed for Render deployment
+python-dotenv==1.0.0  # For managing environment variables
 
-# Database (If using PostgreSQL, install psycopg2)
-psycopg2-binary==2.9.6  # Only needed for PostgreSQL
-
-# Environment Variables
-python-dotenv==1.0.0
+# Database (Only for PostgreSQL)
+psycopg2-binary==2.9.6  # Only needed for PostgreSQL, remove if using SQLite
